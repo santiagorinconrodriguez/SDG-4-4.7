@@ -22,11 +22,10 @@
         <a href="#who">Who</a>
         <a href="#timeline">Timeline</a>
         <a href="#quiz">Quiz</a>
-        <a href="#cta">Join</a>
       </nav>
 
       <div class="header-actions">
-        <button id="darkToggle" aria-pressed="false">🌙</button>
+        <button id="darkToggle" aria-pressed="false">⚫</button>
         <div id="google_translate_element" class="translate-widget" title="Translate page"></div>
       </div>
     </div>
@@ -123,20 +122,6 @@
       </div>
     </section>
 
-    <!-- LOGIN (fun) -->
-    <section id="loginSection" class="card">
-      <h2>Login (fun demo)</h2>
-      <div class="login-box" id="loginBox">
-        <input type="text" id="user" placeholder="Username (try: unal)">
-        <input type="password" id="pass" placeholder="Password (try: 1234)">
-        <div class="login-actions">
-          <button id="loginBtn">Login</button>
-          <button id="loginReset">Reset</button>
-        </div>
-        <small class="hint">If you enter wrong credentials the box will shake 😅</small>
-      </div>
-    </section>
-
     <!-- QUIZ -->
     <section id="quiz" class="card">
       <h2>Mini Quiz</h2>
@@ -149,40 +134,19 @@
       <p id="quizResult" class="quiz-result"></p>
     </section>
 
-    <!-- CALL TO ACTION -->
-    <section id="cta" class="card">
-      <h2>Join the Movement</h2>
-      <p>Help create respectful and inclusive spaces at Universidad Nacional. Register to participate.</p>
-      <button id="openModal">Register</button>
-    </section>
-
     If you have experienced any issue with a professor, please use this form to submit your complaint.
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScUnSl-ysHvOIn_Gi0Pp66GxTsHzeGiHW4wHe4rkSkIa_fyIg/viewform?usp=preview" target="_blank">survey</a>
-"
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScUnSl-ysHvOIn_Gi0Pp66GxTsHzeGiHW4wHe4rkSkIa_fyIg/viewform?usp=preview" target="_blank">Click here</a>
+
   </main>
 
   <footer>
-    <p>Page created by <em>Brayan Santiago Rincón Rodríguez</em> — SDG 4 • Target 4.7</p>
+    <p>Page created by <em>Brayan Rincón, Juan Galindo, Andres Bohorquez, Camilo Moscoso, Alejandra Acosta </p><br>
+    <p>SDG 4 • Target 4.7 </p><br>
   </footer>
 
-  <!-- REGISTER MODAL -->
-  <div id="modal" class="modal" aria-hidden="true" role="dialog">
-    <div class="modal-content" role="document">
-      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
-      <h3>Register to join</h3>
-      <input type="text" id="regName" placeholder="Your name">
-      <input type="text" id="regFaculty" placeholder="Faculty / Department">
-      <input type="email" id="regEmail" placeholder="Email">
-      <div class="modal-actions">
-        <button id="submitReg">Submit</button>
-      </div>
-      <p id="regMessage" class="reg-message"></p>
-    </div>
-  </div>
 
   <script src="pagina.js"></script>
 
-  <!-- Google Translate widget (loads translate script and calls googleTranslateElementInit) -->
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({

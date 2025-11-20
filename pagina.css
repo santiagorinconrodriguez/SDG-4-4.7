@@ -11,7 +11,7 @@ a { color: inherit; }
 
 /* ===== Header ===== */
 header {
-  background: #c5192d;
+  background: #ca1f2f;
   color: white;
   position: sticky;
   top: 0;
@@ -52,7 +52,7 @@ main { max-width: 1000px; margin: 20px auto; padding: 0 1rem; }
 }
 
 /* Headings */
-h2 { color: #c5192d; margin-top: 0; }
+h2 { color: #ca1f2f; margin-top: 0; }
 
 /* Roles grid (flip-ish) */
 .roles { display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; }

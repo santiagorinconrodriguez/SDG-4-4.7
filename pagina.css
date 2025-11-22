@@ -54,6 +54,19 @@ main { max-width: 1000px; margin: 20px auto; padding: 0 1rem; }
 /* Headings */
 h2 { color: #ca1f2f; margin-top: 0; }
 
+.photo-section {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.grupal-photo {
+  width: 80%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  margin-top: 10px;
+}
+
 /* Roles grid (flip-ish) */
 .roles { display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; }
 .role {

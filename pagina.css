@@ -72,12 +72,14 @@ h2 { color: #ca1f2f; margin-top: 0; }
 
 /* PHOTO */
 .photo-section { margin: 30px 0; text-align:center; }
-.grupal-photo {
-  width: 80%;
+.grupal-photo, .responsive-img {
+  width: 100%;
   max-width: 500px;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  margin-top: 10px;
+  margin: 10px auto;
+  display: block;
 }
 
 /* ROLES GRID */
@@ -120,6 +122,11 @@ h2 { color: #ca1f2f; margin-top: 0; }
 .week.active p { display:block; }
 
 /* QUIZ */
+.quiz-buttons {
+  display: flex;
+  flex-wrap: wrap; /* hace que los botones bajen a la siguiente línea en móvil */
+  gap: 8px;
+}
 .quiz-buttons button { margin-right:8px; margin-top:8px; }
 
 /* FOOTER */
@@ -139,13 +146,5 @@ footer { text-align:center; padding:10px; color:white; background:#141414; trans
     align-items: flex-start;
   }
   nav a { text-align: left; }
+  #quiz { padding: 1rem; }
 }
-
-.responsive-img {
-  width: 100%;
-  max-width: 500px; /* o el valor que quieras */
-  height: auto;
-  display: block;
-  margin: 10px auto; /* centra la imagen */
-}
-

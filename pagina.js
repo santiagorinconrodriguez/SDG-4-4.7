@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     week.addEventListener('click', () => week.classList.toggle('active'));
   });
 
-  /* ===== Quiz logic with shuffled options ===== */
+  /* ===== Quiz logic ===== */
   const quizQuestions = [
     { question: "What is the main basis of stereotypes?", options: [
       { text: "Ignorance", correct: true },
@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const quizResultEl = document.getElementById('quizResult');
   const nextBtn = document.getElementById('nextQuestion');
 
-  // Función para mezclar un array (Fisher–Yates shuffle)
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -91,9 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     quizResultEl.textContent = '';
     nextBtn.style.display = 'none';
 
-    // Barajar opciones
     const shuffledOptions = shuffleArray([...q.options]);
-
     shuffledOptions.forEach(opt => {
       const btn = document.createElement('button');
       btn.textContent = opt.text;
@@ -103,13 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function checkAnswer(isCorrect) {
-    if (isCorrect) {
-      quizResultEl.textContent = 'Correct!';
-      quizResultEl.style.color = 'green';
-    } else {
-      quizResultEl.textContent = 'Incorrect, think about SDG 4.7 principles.';
-      quizResultEl.style.color = '#c5192d';
-    }
+    quizResultEl.textContent = isCorrect ? 'Correct!' : 'Incorrect, think about SDG 4.7 principles.';
+    quizResultEl.style.color = isCorrect ? 'green' : '#c5192d';
     nextBtn.style.display = 'inline-block';
   }
 
@@ -125,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Inicializar la primera pregunta
   showQuestion(currentQuestion);
 
   /* ===== Accessibility: focus outline visible on keyboard nav ===== */

@@ -34,15 +34,15 @@ header {
 /* NAV */
 nav {
   display: flex;
-  flex-wrap: wrap;       /* permite que los enlaces pasen a la siguiente línea si no caben */
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 nav a {
-  flex: 1 1 auto;        /* que cada enlace pueda crecer o reducirse */
-  min-width: 80px;       /* ancho mínimo para enlaces cortos */
-  text-align: center;    /* centrado para mejor legibilidad */
-  white-space: normal;   /* permite que las palabras se dividan si son muy largas */
-  word-break: break-word; /* rompe palabras largas si no caben */
+  flex: 1 1 auto;
+  min-width: 80px;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
   margin: 0 .5rem;
   text-decoration: none;
   font-weight:600;
@@ -95,25 +95,17 @@ h2 { color: #ca1f2f; margin-top: 0; }
   transition: transform .28s, box-shadow .2s, background .25s, border .25s;
 }
 .role:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-
 .role-desc {
   margin-top:8px;
   font-size: .9rem;
-  color:#444; /* light mode */
+  color:#444;
   opacity:0;
   transform: translateY(6px);
   transition: opacity .22s, transform .22s, color .25s;
 }
 .role:hover .role-desc { opacity:1; transform: translateY(0); }
-
-/* DARK MODE adjustments for roles */
-.dark-mode .role {
-  background: linear-gradient(180deg,#222,#2a2a2a);
-  border: 1px solid rgba(255,255,255,0.1);
-}
-.dark-mode .role-desc {
-  color: #e0e0e0; /* text visible in dark mode */
-}
+.dark-mode .role { background: linear-gradient(180deg,#222,#2a2a2a); border: 1px solid rgba(255,255,255,0.1); }
+.dark-mode .role-desc { color: #e0e0e0; }
 
 /* TIMELINE */
 .timeline { border-left: 3px solid #c5192d; margin-left: 10px; padding-left: 16px; }
@@ -122,12 +114,32 @@ h2 { color: #ca1f2f; margin-top: 0; }
 .week.active p { display:block; }
 
 /* QUIZ */
-.quiz-buttons {
-  display: flex;
-  flex-wrap: wrap; /* hace que los botones bajen a la siguiente línea en móvil */
-  gap: 8px;
+#quiz { display:block; max-width:600px; margin:20px auto; padding:1rem; }
+#quiz-question { font-weight:600; margin-bottom:12px; }
+.quiz-buttons { display:flex; flex-wrap:wrap; gap:8px; }
+.quiz-buttons button {
+  flex: 1 1 30%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  cursor:pointer;
+  border:none;
+  border-radius:6px;
+  background: #ca1f2f;
+  color:white;
+  transition: background .2s, transform .2s;
 }
-.quiz-buttons button { margin-right:8px; margin-top:8px; }
+.quiz-buttons button:hover { background:#e63946; transform:scale(1.05); }
+#quizResult { margin-top:12px; font-weight:600; }
+#nextQuestion {
+  margin-top:12px;
+  padding: 8px 16px;
+  border:none;
+  border-radius:6px;
+  background:#141414;
+  color:white;
+  cursor:pointer;
+}
+#nextQuestion:hover { background:#333; }
 
 /* FOOTER */
 footer { text-align:center; padding:10px; color:white; background:#141414; transition: background .25s, color .25s; }
@@ -141,10 +153,8 @@ footer { text-align:center; padding:10px; color:white; background:#141414; trans
 @media (max-width:720px) {
   .header-inner { flex-direction:column; gap:.8rem; align-items:flex-start; }
   .roles { flex-direction:column; }
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  nav { flex-direction: column; align-items: flex-start; }
   nav a { text-align: left; }
-  #quiz { padding: 1rem; }
+  #quiz { padding:1rem; }
+  .quiz-buttons button { flex:1 1 45%; font-size:0.9rem; }
 }

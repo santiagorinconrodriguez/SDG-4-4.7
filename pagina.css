@@ -9,7 +9,7 @@ body {
 }
 a { color: inherit; }
 
-/* ===== Header ===== */
+/* HEADER */
 header {
   background: #ca1f2f;
   color: white;
@@ -31,34 +31,47 @@ header {
 .brand h1 { font-size: 1.05rem; margin:0; }
 .logo { width:80px; height:auto; }
 
-/* nav */
-nav a { margin: 0 .5rem; text-decoration: none; font-weight:600; color: #fff; }
+/* NAV */
+nav {
+  display: flex;
+  flex-wrap: wrap;       /* permite que los enlaces pasen a la siguiente línea si no caben */
+  gap: 0.5rem;
+}
+nav a {
+  flex: 1 1 auto;        /* que cada enlace pueda crecer o reducirse */
+  min-width: 80px;       /* ancho mínimo para enlaces cortos */
+  text-align: center;    /* centrado para mejor legibilidad */
+  white-space: normal;   /* permite que las palabras se dividan si son muy largas */
+  word-break: break-word; /* rompe palabras largas si no caben */
+  margin: 0 .5rem;
+  text-decoration: none;
+  font-weight:600;
+  color: #fff;
+}
 nav a:hover { text-decoration: underline; }
 
-/* header actions */
+/* ACTIONS */
 .header-actions { display:flex; align-items:center; gap:.6rem; }
 .translate-widget { min-width: 180px; }
 
-/* ===== Main layout ===== */
+/* MAIN */
 main { max-width: 1000px; margin: 20px auto; padding: 0 1rem; }
 
-/* Card */
+/* CARD */
 .card {
   background: #fff;
   padding: 1.2rem;
   border-radius: 20px;
   margin-bottom: 28px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  transition: background .25s, box-shadow .25s, border .25s;
 }
 
-/* Headings */
+/* HEADINGS */
 h2 { color: #ca1f2f; margin-top: 0; }
 
-.photo-section {
-  margin: 30px 0;
-  text-align: center;
-}
-
+/* PHOTO */
+.photo-section { margin: 30px 0; text-align:center; }
 .grupal-photo {
   width: 80%;
   max-width: 500px;
@@ -67,7 +80,7 @@ h2 { color: #ca1f2f; margin-top: 0; }
   margin-top: 10px;
 }
 
-/* Roles grid (flip-ish) */
+/* ROLES GRID */
 .roles { display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; }
 .role {
   background: linear-gradient(180deg,#fff,#fafafa);
@@ -77,39 +90,62 @@ h2 { color: #ca1f2f; margin-top: 0; }
   min-width: 180px;
   border-radius: 8px;
   text-align:center;
-  position:relative;
-  transition: transform .28s, box-shadow .2s;
+  transition: transform .28s, box-shadow .2s, background .25s, border .25s;
 }
 .role:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-.role .role-desc {
+
+.role-desc {
   margin-top:8px;
   font-size: .9rem;
-  color:#444;
+  color:#444; /* light mode */
   opacity:0;
   transform: translateY(6px);
-  transition: opacity .22s, transform .22s;
+  transition: opacity .22s, transform .22s, color .25s;
 }
 .role:hover .role-desc { opacity:1; transform: translateY(0); }
 
-/* Timeline */
+/* DARK MODE adjustments for roles */
+.dark-mode .role {
+  background: linear-gradient(180deg,#222,#2a2a2a);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.dark-mode .role-desc {
+  color: #e0e0e0; /* text visible in dark mode */
+}
+
+/* TIMELINE */
 .timeline { border-left: 3px solid #c5192d; margin-left: 10px; padding-left: 16px; }
 .week { padding: 8px 0; cursor:pointer; }
-.week p { margin:6px 0 0 0; display:none; color:#333; }
+.week p { margin:6px 0 0 0; display:none; }
 .week.active p { display:block; }
 
-/* quiz */
+/* QUIZ */
 .quiz-buttons button { margin-right:8px; margin-top:8px; }
 
-/* footer */
-footer { text-align:center; padding:4px; color:#fff; background:#141414; margin-top:22px; }
+/* FOOTER */
+footer { text-align:center; padding:10px; color:white; background:#141414; transition: background .25s, color .25s; }
 
-/* dark mode */
+/* DARK MODE */
 .dark-mode { background:#111; color:#eaeaea; }
 .dark-mode .card { background:#171717; box-shadow: 0 8px 26px rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.03); }
 .dark-mode footer { background:#000; }
 
-/* small screens */
+/* RESPONSIVE */
 @media (max-width:720px) {
   .header-inner { flex-direction:column; gap:.8rem; align-items:flex-start; }
   .roles { flex-direction:column; }
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav a { text-align: left; }
 }
+
+.responsive-img {
+  width: 100%;
+  max-width: 500px; /* o el valor que quieras */
+  height: auto;
+  display: block;
+  margin: 10px auto; /* centra la imagen */
+}
+

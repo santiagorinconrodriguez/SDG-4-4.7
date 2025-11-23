@@ -54,13 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
     ]},
     { question: "Which of these is part of SDG 4.7 targets?", options: [
       { text: "Gender equality", correct: true },
-      { text: "Building sports stadiums", correct: false },
+      { text: "Water manage", correct: false },
       { text: "Tax reform", correct: false }
     ]},
     { question: "How does education contribute to sustainable development?", options: [
       { text: "Equips learners with skills and knowledge to act responsibly", correct: true },
-      { text: "Only provides certificates", correct: false },
-      { text: "Focuses solely on memorization", correct: false }
+      { text: "Only provides certificates ", correct: false },
+      { text: "Focuses solely on memorization in order to improve society", correct: false }
     ]},
     { question: "Which approach does ESD promote?", options: [
       { text: "Holistic approach covering cognitive, socio-emotional, and behavioral skills", correct: true },

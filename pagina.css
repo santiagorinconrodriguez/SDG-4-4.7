@@ -158,3 +158,23 @@ footer { text-align:center; padding:10px; color:white; background:#141414; trans
   #quiz { padding:1rem; }
   .quiz-buttons button { flex:1 1 45%; font-size:0.9rem; }
 }
+
+.level-1, .level-2, .level-3, .level-4, .level-5 {
+  font-size: 1rem;       /* misma que el texto normal */
+  font-weight: normal;    /* mismo peso que el texto normal */
+  line-height: 1.5;       /* mejor legibilidad */
+}
+
+/* Indentación según nivel */
+.level-1 { margin-left: 0; }
+.level-2 { margin-left: 1.5rem; }
+.level-3 { margin-left: 3rem; }
+.level-4 { margin-left: 4.5rem; }
+.level-5 { margin-left: 6rem; }
+
+/* Opcional: espacio entre títulos y párrafos */
+.level-1 > p, .level-2 > p, .level-3 > p {
+  margin-top: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+

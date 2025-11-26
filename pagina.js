@@ -32,11 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ===== Quiz logic ===== */
   const quizQuestions = [
-    { question: "What is the main basis of stereotypes?", options: [
-      { text: "Ignorance", correct: true },
-      { text: "Lack of education", correct: true },
-      { text: "Malice", correct: false }
-    ]},
+
     { question: "What does SDG 4.7 focus on?", options: [
       { text: "Access to free healthcare", correct: false },
       { text: "Education for sustainable development", correct: true },

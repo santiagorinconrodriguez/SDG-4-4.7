@@ -115,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   showQuestion(currentQuestion);
+  
 
   /* ===== Accessibility: focus outline visible on keyboard nav ===== */
   document.addEventListener('keydown', e => {

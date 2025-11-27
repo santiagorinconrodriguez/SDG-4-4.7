@@ -376,6 +376,34 @@ Join the effort to strengthen sustainable education — your knowledge can drive
     <button id="nextQuestion">Next</button>
   </section>
 
+<script>
+  const keywords = ["education", "awareness", "SDG", "sustainability", "action"];
+
+  function underlineKeywords() {
+    // Selecciona todo el texto visible dentro de estas etiquetas
+    const elements = document.querySelectorAll('p, li, h1, h2, h3, h4, h5, h6, span, section');
+
+    elements.forEach(el => {
+      let html = el.innerHTML;
+      keywords.forEach(word => {
+        const regex = new RegExp(`\\b(${word})\\b`, 'gi'); // Detecta palabra completa, sin importar mayúsculas
+        html = html.replace(regex, '<u>$1</u>');
+      });
+      el.innerHTML = html;
+    });
+  }
+
+  window.onload = underlineKeywords; // Ejecuta al cargar la página
+</script>
+
+<h2>Highlighted words: </h2>
+<ul>
+  <li>education</li>
+  <li>awareness</li>
+  <li>SDG</li>
+  <li>sustainability</li>
+  <li>action</li>
+</ul>
 </main>
 
 <footer>

@@ -193,3 +193,14 @@ footer { text-align:center; padding:10px; color:white; background:#141414; trans
   margin-top: 0.3rem;
   margin-bottom: 0.8rem;
 }
+
+.image-banner {
+  background: #c5192d; /* ya usas ese color */
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 12px 12px 0 0; /* se ve como encabezado de imagen */
+  margin-bottom: -4px;
+}

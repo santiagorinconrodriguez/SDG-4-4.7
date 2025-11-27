@@ -2,11 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ===== Smooth scroll for nav links ===== */
   document.querySelectorAll('nav a').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+    if (!a.target || a.target !== "_blank") { // only internal links
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
   });
 
   /* ===== Dark mode toggle (persist) ===== */
@@ -32,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ===== Quiz logic ===== */
   const quizQuestions = [
-
     { question: "What does SDG 4.7 focus on?", options: [
       { text: "Access to free healthcare", correct: false },
       { text: "Education for sustainable development", correct: true },

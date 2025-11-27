@@ -32,23 +32,42 @@ header {
 .logo { width:80px; height:auto; }
 
 /* NAV */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+nav { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+nav ul.nav-menu {
+  display:flex;
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+nav ul.nav-menu > li {
+  position: relative;
+  margin: 0 .5rem;
 }
 nav a {
-  flex: 1 1 auto;
-  min-width: 80px;
-  text-align: center;
-  white-space: normal;
-  word-break: break-word;
-  margin: 0 .5rem;
-  text-decoration: none;
+  text-decoration:none;
   font-weight:600;
-  color: #fff;
+  color:#fff;
+  display:block;
+  padding:8px 12px;
 }
 nav a:hover { text-decoration: underline; }
+
+/* DROPDOWN */
+nav li.dropdown:hover > .dropdown-menu { display:block; }
+.dropdown-menu {
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#ca1f2f;
+  border-radius:6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  min-width:150px;
+  z-index:50;
+}
+.dropdown-menu li { margin:0; }
+.dropdown-menu a { padding:8px 12px; color:white; }
+.dropdown-menu a:hover { background:#e63946; }
 
 /* ACTIONS */
 .header-actions { display:flex; align-items:center; gap:.6rem; }
@@ -160,21 +179,17 @@ footer { text-align:center; padding:10px; color:white; background:#141414; trans
 }
 
 .level-1, .level-2, .level-3, .level-4, .level-5 {
-  font-size: 1rem;       /* misma que el texto normal */
-  font-weight: normal;    /* mismo peso que el texto normal */
-  line-height: 1.5;       /* mejor legibilidad */
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
 }
-
-/* Indentación según nivel */
 .level-1 { margin-left: 0; }
 .level-2 { margin-left: 1.5rem; }
 .level-3 { margin-left: 3rem; }
 .level-4 { margin-left: 4.5rem; }
 .level-5 { margin-left: 6rem; }
 
-/* Opcional: espacio entre títulos y párrafos */
 .level-1 > p, .level-2 > p, .level-3 > p {
   margin-top: 0.3rem;
   margin-bottom: 0.8rem;
 }
-
